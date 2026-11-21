@@ -1,0 +1,3 @@
+{"id":"metric-001","task":"metric","input":"Compute monthly active users for 2024-01 (distinct users with an order).","metric_name":"mau","gold_value":2.0,"context":"orders in Jan: users 1,2"}
+{"id":"metric-002","task":"metric","input":"Compute total revenue.","metric_name":"total_revenue","gold_value":123.5,"context":"orders amounts sum"}
+{"id":"metric-003","task":"metric","input":"Compute average order value.","metric_name":"aov","gold_value":30.875,"context":"total/count"}

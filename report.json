@@ -1,0 +1,219 @@
+{
+  "suite": "all",
+  "n": 9,
+  "passed": 9,
+  "avg_score": 0.9463,
+  "cases": [
+    {
+      "case_id": "nl2sql-001",
+      "task": "nl2sql",
+      "pipeline_output": "SELECT COUNT(*) FROM users WHERE created_at LIKE '2024-01-%'",
+      "checks": [
+        {
+          "name": "sql_execution",
+          "passed": true,
+          "detail": "got=[[2]] expected=[[2]]",
+          "score": 1.0
+        }
+      ],
+      "judge": {
+        "score": 1.0,
+        "rationale": "offline heuristic judge",
+        "dimensions": {
+          "correctness": 1.0
+        }
+      },
+      "final_score": 1.0,
+      "passed": true
+    },
+    {
+      "case_id": "nl2sql-002",
+      "task": "nl2sql",
+      "pipeline_output": "SELECT id,name,created_at FROM users ORDER BY id",
+      "checks": [
+        {
+          "name": "sql_execution",
+          "passed": true,
+          "detail": "got=[[1, 'Alice', '2024-01-05'], [2, 'Bob', '2024-01-10'], [3, 'Carol', '2024-02-01'], [4, 'Dave', '2024-02-15']] expected=[[1, 'Alice', '2024-01-05'], [2, 'Bob', '2024-01-10'], [3, 'Carol', '2024-02-01'], [4, 'Dave', '2024-02-15']]",
+          "score": 1.0
+        }
+      ],
+      "judge": {
+        "score": 1.0,
+        "rationale": "offline heuristic judge",
+        "dimensions": {
+          "correctness": 1.0
+        }
+      },
+      "final_score": 1.0,
+      "passed": true
+    },
+    {
+      "case_id": "nl2sql-003",
+      "task": "nl2sql",
+      "pipeline_output": "SELECT SUM(amount) FROM orders WHERE user_id=1",
+      "checks": [
+        {
+          "name": "sql_execution",
+          "passed": true,
+          "detail": "got=[[19.5]] expected=[[19.5]]",
+          "score": 1.0
+        }
+      ],
+      "judge": {
+        "score": 1.0,
+        "rationale": "offline heuristic judge",
+        "dimensions": {
+          "correctness": 1.0
+        }
+      },
+      "final_score": 1.0,
+      "passed": true
+    },
+    {
+      "case_id": "nl2sql-004",
+      "task": "nl2sql",
+      "pipeline_output": "SELECT COUNT(*) FROM orders",
+      "checks": [
+        {
+          "name": "sql_execution",
+          "passed": true,
+          "detail": "got=[[4]] expected=[[4]]",
+          "score": 1.0
+        }
+      ],
+      "judge": {
+        "score": 1.0,
+        "rationale": "offline heuristic judge",
+        "dimensions": {
+          "correctness": 1.0
+        }
+      },
+      "final_score": 1.0,
+      "passed": true
+    },
+    {
+      "case_id": "metric-001",
+      "task": "metric",
+      "pipeline_output": 2.0,
+      "checks": [
+        {
+          "name": "metric_exact",
+          "passed": true,
+          "detail": "got=2.0 expected=2.0",
+          "score": 1.0
+        }
+      ],
+      "judge": {
+        "score": 1.0,
+        "rationale": "offline heuristic judge",
+        "dimensions": {
+          "correctness": 1.0
+        }
+      },
+      "final_score": 1.0,
+      "passed": true
+    },
+    {
+      "case_id": "metric-002",
+      "task": "metric",
+      "pipeline_output": 123.5,
+      "checks": [
+        {
+          "name": "metric_exact",
+          "passed": true,
+          "detail": "got=123.5 expected=123.5",
+          "score": 1.0
+        }
+      ],
+      "judge": {
+        "score": 1.0,
+        "rationale": "offline heuristic judge",
+        "dimensions": {
+          "correctness": 1.0
+        }
+      },
+      "final_score": 1.0,
+      "passed": true
+    },
+    {
+      "case_id": "metric-003",
+      "task": "metric",
+      "pipeline_output": 30.875,
+      "checks": [
+        {
+          "name": "metric_exact",
+          "passed": true,
+          "detail": "got=30.875 expected=30.875",
+          "score": 1.0
+        }
+      ],
+      "judge": {
+        "score": 1.0,
+        "rationale": "offline heuristic judge",
+        "dimensions": {
+          "correctness": 1.0
+        }
+      },
+      "final_score": 1.0,
+      "passed": true
+    },
+    {
+      "case_id": "doc-001",
+      "task": "doc",
+      "pipeline_output": "Refunds are available within 30 days with a receipt; digital goods are non-refundable after download.",
+      "checks": [
+        {
+          "name": "doc_overlap",
+          "passed": true,
+          "detail": "overlap=1.00",
+          "score": 1.0
+        },
+        {
+          "name": "doc_semantic",
+          "passed": true,
+          "detail": "cosine=0.79",
+          "score": 0.7886507647472073
+        }
+      ],
+      "judge": {
+        "score": 0.8943253823736037,
+        "rationale": "offline heuristic judge",
+        "dimensions": {
+          "correctness": 0.8943253823736037
+        }
+      },
+      "final_score": 0.8943,
+      "passed": true
+    },
+    {
+      "case_id": "doc-002",
+      "task": "doc",
+      "pipeline_output": "Click 'Forgot password' on the login page; a link is emailed and expires in 15 minutes.",
+      "checks": [
+        {
+          "name": "doc_overlap",
+          "passed": true,
+          "detail": "overlap=0.71",
+          "score": 0.7142857142857143
+        },
+        {
+          "name": "doc_semantic",
+          "passed": true,
+          "detail": "cosine=0.53",
+          "score": 0.5301339932379163
+        }
+      ],
+      "judge": {
+        "score": 0.6222098537618153,
+        "rationale": "offline heuristic judge",
+        "dimensions": {
+          "correctness": 0.6222098537618153
+        }
+      },
+      "final_score": 0.6222,
+      "passed": true
+    }
+  ],
+  "baseline_delta": null
+}

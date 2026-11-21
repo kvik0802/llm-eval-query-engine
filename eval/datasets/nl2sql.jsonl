@@ -1,0 +1,4 @@
+{"id":"nl2sql-001","task":"nl2sql","input":"How many users signed up in January 2024?","gold_sql":"SELECT COUNT(*) FROM users WHERE created_at LIKE '2024-01-%'","db":"fixtures/sample.db","expected_rows":[[2]]}
+{"id":"nl2sql-002","task":"nl2sql","input":"List all users.","gold_sql":"SELECT id,name,created_at FROM users ORDER BY id","db":"fixtures/sample.db","expected_rows":[[1,"Alice","2024-01-05"],[2,"Bob","2024-01-10"],[3,"Carol","2024-02-01"],[4,"Dave","2024-02-15"]]}
+{"id":"nl2sql-003","task":"nl2sql","input":"Total order amount for user Alice.","gold_sql":"SELECT SUM(amount) FROM orders WHERE user_id=1","db":"fixtures/sample.db","expected_rows":[[19.5]]}
+{"id":"nl2sql-004","task":"nl2sql","input":"How many orders were placed?","gold_sql":"SELECT COUNT(*) FROM orders","db":"fixtures/sample.db","expected_rows":[[4]]}

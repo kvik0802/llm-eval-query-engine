@@ -1,0 +1,25 @@
+# Python artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Environments & secrets
+.env
+.venv/
+env/
+venv/
+ENV/
+
+# Databases & local run outputs
+*.db
+eval_runs.db
+report.json
+report.md
+viz/*.png
+viz/*.html
